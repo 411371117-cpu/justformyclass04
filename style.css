@@ -1,0 +1,376 @@
+/* ======================
+   基本設定
+====================== */
+
+body{
+
+    margin:0;
+
+    font-family:
+    'Zen Maru Gothic',
+    sans-serif;
+
+    color:#555;
+}
+
+/* ======================
+   背景
+====================== */
+
+.background{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f9e7ec,
+        #f7efe8
+    );
+
+    padding:50px;
+}
+
+/* ======================
+   主卡片
+====================== */
+
+.container{
+
+    background:
+    rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(12px);
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:40px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    animation:
+    pageLoad 1s ease;
+}
+
+/* ======================
+   網頁進場動畫
+====================== */
+
+@keyframes pageLoad{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ======================
+   標籤列
+====================== */
+
+.tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+}
+
+.tabs button{
+
+    border:none;
+
+    background:#f5d9e2;
+
+    padding:15px 35px;
+
+    border-radius:
+    15px 15px 0 0;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    font-family:
+    'Zen Maru Gothic',
+    sans-serif;
+}
+
+.tabs button:hover{
+
+    background:#eec8d5;
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+/* ======================
+   個人資料
+====================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.profile img{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.12);
+}
+
+/* ======================
+   文字
+====================== */
+
+h1{
+
+    margin:0;
+
+    font-size:36px;
+}
+
+h2{
+
+    color:#d48aa0;
+
+    margin-bottom:25px;
+}
+
+h3{
+
+    color:#d48aa0;
+}
+
+p{
+
+    line-height:2;
+
+    text-align:justify;
+}
+
+/* ======================
+   分頁動畫
+====================== */
+
+.tab-content{
+
+    display:none;
+}
+
+.tab-content.active{
+
+    display:block;
+
+    animation:
+    fadeUp .5s ease forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ======================
+   作品集區塊
+====================== */
+
+.portfolio-section{
+
+    margin-bottom:70px;
+
+    overflow:hidden;
+}
+
+/* 圖文環繞圖片 */
+
+.portfolio-image{
+
+    width:100%;
+
+    max-width:500px;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:15px;
+}
+
+.portfolio-image:hover{
+
+    transform:scale(1.03);
+}
+
+/* 右側圖片 */
+
+.portfolio-image.right{
+
+    float:right;
+
+    margin:
+    0 0 15px 25px;
+}
+
+/* ======================
+   作品集圖片牆
+====================== */
+
+.gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+}
+
+.gallery img{
+
+    max-height:280px;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.gallery img:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.15);
+}
+
+/* ======================
+   手機版
+====================== */
+
+@media (max-width:768px){
+
+    .background{
+
+        padding:20px;
+    }
+
+    .container{
+
+        padding:25px;
+    }
+
+    .profile{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .profile img{
+
+        width:110px;
+
+        height:110px;
+    }
+
+    .tabs{
+
+        justify-content:center;
+    }
+
+    .tabs button{
+
+        width:100%;
+    }
+
+    h1{
+
+        font-size:28px;
+    }
+
+    /* 手機作品集 */
+
+    .gallery{
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.gallery img{
+
+    max-width:300px;
+
+    width:100%;
+
+    height:auto;
+}
